@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@200;300;400;600&family=Raleway:wght@100..900&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/static/stacked-peaks-haikei.png);
+    background-size: cover;
+}
+h3 {
+    color: #333;
+    text-align: center;
+    margin-top: 50px;
+}
+form {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.btn {
+    background-color: rgb(109, 211, 107);
+    border: solid 1px rgb(109, 211, 107);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.btn:hover {
+    color: rgb(109, 211, 107);
+    background-color: white;
+}
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    width: auto;
+}
+
+.custom-input {
+
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+
+}
+
+.form_container{
+    margin-bottom: 40px;
+}

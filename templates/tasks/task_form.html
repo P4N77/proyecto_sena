@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if object %}Editar {% else %} Añadir {% endif %}</title>
+    <link rel="stylesheet" href="{% static 'styleForm.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'tasks:index' %}">Inicio</a></li>
+            <li><a href="{% url 'login' %}">Ingresa</a></li>
+            <li><a href="{% url 'tasks:purchase_vegetable' %}">Facturas</a></li>
+            <li><a href="{% url 'tasks:task_list' %}">Inventario</a></li>
+        </ul>
+    </nav>
+    <div class="separation"></div>
+<h3>{% if object %}Editar {% else %} Añadir {% endif %}</h3>
+<div class="form_container">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p><input type="submit" class="btn btn-success" value="Submit"></p>
+    </form>
+</div>
+
+    
+    
+</body>
+</html>

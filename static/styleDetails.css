@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@200;300;400;600&family=Raleway:wght@100..900&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-image: url(stacked-peaks-haikei.png);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+.card {
+    margin-top: 80px;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.card-header {
+    background-color: #cfcfcf;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.card-body {
+    padding: 20px;
+}
+h1 {
+    color: #333;
+    margin-top: 0;
+}
+p {
+    color: #666;
+    margin: 10px 0;
+}
+
+
+.button {
+    display: inline-block;
+    background-color: rgb(109, 211, 107);
+    border: solid 1px rgb(109, 211, 107);
+    color: #fff;
+
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.button:hover {
+    background-color: white;
+    color: rgb(109, 211, 107);
+}

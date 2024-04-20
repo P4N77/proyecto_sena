@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles</title>
+    <link rel="stylesheet" href="{% static 'styleDetails.css' %}">
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1>Detalles del vegetal</h1>
+        </div>
+        <div class="card-body">
+            <p>Nombre del vegetal: {{ task.name }}</p>
+            <p>Tipo de vegetal: {{ task.get_status_display }}</p>
+            <p>Precio del vegetal: {{ task.price }}</p>
+
+            <p><a href="{% url 'tasks:task_update' task.id %}" class="button">Actualizar</a> |
+                <a href="{% url 'tasks:task_delete' task.id %}" class="button" id="DeleteButtom">Eliminar</a></p>
+            <p><a href="{% url 'tasks:task_list' %}" class="button">Ver Vegetales</a> |
+                <a href="{% url 'tasks:task_create'%}" class="button">Nuevo vegetal</a></p>
+        </div>
+    </div>
+    </body>
+</html>

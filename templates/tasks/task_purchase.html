@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facturas</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+</head>
+<body>
+
+  <nav id="navbar">
+    <ul>
+      
+
+        <li><a href="{% url 'tasks:index' %}">Inicio</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'tasks:salir' %}">Salir</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}">Ingresa</a></li>
+        {% endif %}
+        <li><a href="{% url 'tasks:purchase_vegetable' %}">Facturas</a></li>
+        <li><a href="{% url 'tasks:task_list' %}">Inventario</a></li>
+    </ul>
+</nav>
+<div class="separation"></div>
+
+<div class="buttons">
+<button id="print-btn" disabled>Imprimir</button>
+<a href="{% url 'tasks:purchase_vegetable' %}" class="re_btn">recargar</a>
+</div>
+            <div class="container_tables">
+                <div class="table_views">
+        <div class="container_view_fac">
+        <h3>Lista de Productos</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Precio/unidad</th>
+                <th>Cantidad</th>
+                <th>Accion</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for task in tasks %}
+            {% if task.actives == 'd' %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ task.name }}</td>
+                <td>${{ task.price|floatformat:2}}</td>
+
+
+
+
+                <td><input type="number" class="quantity-input" inputmode="numeric"></td>
+                <td><button class="add-btn" data-name="{{ task.name }}" data-price="{{ task.price }}">Añadir</button></td>
+
+            </tr>
+            {% endif %}
+            
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+        <div class="table_fac">
+        <div class="container_Fac">
+        <h3 class="text_elements_add">Elementos Añadidos</h3>
+        <h3 class="text_elements_print">Detalles de factura</h3>
+        <table id="added-table">
+            <div id="fechaDeHoy"></div>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <div class="results">
+            <button id="guardar-btn">Guardar</button> 
+                <div id="total-div"></div>
+            </div>  
+    </div>
+       
+</div>
+</div>
+        
+
+        
+    
+
+    </div>
+    <script src="{% static 'main.js' %}" defer></script>
+</body>
+</html>
